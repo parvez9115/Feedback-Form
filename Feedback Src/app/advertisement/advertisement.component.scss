@@ -1,0 +1,45 @@
+
+
+// /*Slider*/
+// .wrapper-container{
+//     background-color: white;
+//     height: 100%;
+//   }
+  
+//   @media only screen and (min-width: 768px) {
+//     ion-slides {
+//       height:450px;
+//       width:100%;
+//       padding: 20px;
+//      }
+//   } 
+
+
+
+/*Slider*/
+.wrapper-container{
+  background-color: white;
+  height: 100%;
+}
+
+ @media only screen and (max-width: 1024px) {
+  ion-slides {
+    height:100%;
+    width:100%;
+    margin: 15px auto;
+   }
+   ion-button{
+     margin: 0px auto 0px;
+   }
+  }
+  @media only screen and (min-width: 1024px) {
+    ion-slides {
+      height:465px;
+      width:100%;
+      margin: -1em ;
+      }
+      ion-button{
+        margin: 10px auto 0px;
+      }
+    } 
+  

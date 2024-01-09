@@ -1,0 +1,224 @@
+<ion-content [fullscreen]="true"> 
+  <div class="feedback-wrapper">
+    <div class="heading-container">
+    <ion-row >
+      <ion-col size="2">
+        <ion-img src="assets/stage_3/Logo 02.png"  class="image-container"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h2 style="color: #3880ff;font-weight: 600;font-size: 20px;margin:5px auto;
+        letter-spacing: 3px;" class="ion-text-center">Customer List</h2>
+        <p style="font-style: italic;font-size: 11px;margin: 0px 5px;" class="ion-text-center">Let's get in touch</p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img src="assets/stage_3/group-icon.png"  class="imagegroup-container"></ion-img>
+      </ion-col>
+    </ion-row>
+  </div>
+  
+ <div class="wrapper-container"> 
+<!----------------ExportBtn----------->
+ 
+<ion-button (click)=" exportToExcel()" style="width:120px;height:30px;float:right;--background:white;color:rgb(9, 248, 9)" >
+  Excel
+  <ion-icon name="download" style="font-size: 20px;float:right"></ion-icon>
+  </ion-button>
+<ion-button (click)="createPdf()" style="width:120px;height:30px;float:right;--background:white;color:rgb(248, 11, 11)"> 
+  PDF
+  <ion-icon name="download" style="font-size: 20px;float:right"></ion-icon>
+</ion-button>
+
+    <jqxGrid #myGrid
+    [width]="'100%'" 
+    [source]="employeesAdapter" [columns]="columns"
+    [rowdetails]="true"  [initrowdetails]="initRowDetails"
+    [ready]="ready" [rowdetailstemplate]="rowdetailstemplate" 
+    [sortable]="true" 
+    [filterable]="true"
+    [columns]='columns' 
+    [theme]="'energyblue'"
+    [altrows]="true"
+  
+    [pageable]="true"
+    [editmode]="'selectedrow'" [selectionmode]="'singlerow'"
+    
+    [autoheight]="true"
+    style="margin:0px auto ;font-size:11px;font-weight:500;text-align: center;"
+    class="grid">
+    </jqxGrid>
+    <!-- [rendertoolbar]="rendertoolbar" -->
+    <!-- [showtoolbar]="true"  -->
+<jqxWindow #myWindow [width]="'100%'" [height]="'99%'" [resizable]="true" [isModal]="false" [autoOpen]="false"  [modalOpacity]="'0.01'" [theme]="'darkblue'" style="border:0">
+  <div style="display: none;">Edit</div>
+ 
+  <div class="popup-container">
+      <div class="heading-container">
+        <ion-row >
+          <ion-col size="2">
+            <ion-img src="assets/stage_3/Logo 02.png"  class="image-container"></ion-img>
+          </ion-col>
+          <ion-col size="8">
+            <h2 style="color: #3880ff;font-weight: 600;font-size: 20px;margin:5px auto;
+            letter-spacing: 3px;" class="ion-text-center">Registration Form</h2>
+            <p style="font-style: italic;font-size: 11px;margin: 0px 5px;" class="ion-text-center">Let's get in touch</p>
+          </ion-col>
+          <ion-col size="2">
+            <ion-img src="assets/stage_3/group-icon.png"  class="imagegroup-container"></ion-img>
+          </ion-col>
+        </ion-row>
+      </div>
+  <ion-row >
+   <ion-col size-lg="9" size-sm="12" size-md="12" style="margin:auto;text-align:center">
+    <ion-row>
+      <ion-col  size="12" size-sm="4" size-lg="4" size-md="4" >
+        <ion-list style="background: transparent;" lines="none">
+          <ion-item class="backBorder">
+            <ion-icon name="people"  class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text"   [placeholder]="name"  #name style="border: none;margin-left: 10px;"></jqxInput >
+          </ion-item>
+          <ion-item class="backBorder">
+            <ion-icon name="home" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" [placeholder]="primaryContact" #primaryContact style="border: none;"></jqxInput >
+          </ion-item>
+          <ion-item class="backBorder">
+            <ion-icon name="people-circle" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" [placeholder]="customerId" #customerId style="border: none;"></jqxInput >
+          </ion-item>
+          <ion-item class="backBorder">
+            <ion-icon name="business" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" placeholder="Company Name"  #companyName style="border: none;" disabled></jqxInput >
+          </ion-item>
+          <ion-item class="backBorder">
+            <ion-icon name="car-sport" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" [placeholder]="vehicleRegNo" #vehicleRegNo style="border: none;"></jqxInput >
+          </ion-item>
+          
+          <ion-item class="backBorder">
+            <ion-icon name="man" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" placeholder="Position" #position style="border: none;" disabled></jqxInput >
+          </ion-item>
+          <ion-item class="backBorder">
+            <ion-icon name="car-sport" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" placeholder="Town" #Town style="border: none;" disabled></jqxInput >
+          </ion-item>
+          <ion-item class="backBorder">
+            <ion-icon name="location" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" placeholder="Country" #country style="border: none;" disabled></jqxInput >
+          </ion-item> 
+           <ion-item class="backBorder">
+            <ion-icon name="location" class="iconSize" slot="start"></ion-icon>
+            <jqxInput  type="text" placeholder="Member ID No." #memberId style="border: none;" disabled></jqxInput >
+          </ion-item> 
+        </ion-list>
+        
+      </ion-col>
+      <ion-col  size="12" size-sm="4" size-lg="8" size-md="8"  style="margin:0;padding:0;">
+         <ion-row style="margin:0;padding:0;">
+        <ion-col  size="12" size-sm="12" size-lg="5" size-md="5">
+            <ion-list  lines="none" >
+              <ion-item class="backBorder">
+                <ion-img src="assets/stage_3/images/02.gif" style="width: 26px;
+                 height: 21px;margin-right: 9px;" class="iconSize" slot="start"> </ion-img>
+                <ion-input  type="number" placeholder="Primary Contact" style="border: none;" disabled></ion-input  >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-img src="assets/stage_3/images/03.gif" style="margin-right: 9px;padding-right:10px" class="iconSize" slot="start"> </ion-img>
+                <ion-input   type="number"  placeholder="Secondary Contact" style="border: none;" disabled></ion-input  >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-img src="assets/stage_3/images/05.gif" style="margin-right: 12px;padding-right:10px" class="iconSize" slot="start"> </ion-img>
+                <ion-input   type="number" placeholder="Mobile No.3" style="border: none;" disabled></ion-input >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-img src="assets/stage_3/images/05.gif"  style="margin-right: 12px;padding-right:10px" class="iconSize" slot="start"> </ion-img>
+                <ion-input   type="number" placeholder="Mobile No.4" style="border: none;" disabled></ion-input  >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-img src="assets/stage_3/images/05.gif" style="margin-right: 12px;padding-right:10px;"
+                  class="iconSize " slot="start"> </ion-img>
+                <ion-input   type="number" placeholder="Mobile No.5" style="border: none;" disabled></ion-input  >
+              </ion-item>
+              
+              <ion-item class="backBorder">
+                <ion-icon name="logo-whatsapp" class="iconSize" slot="start"></ion-icon>
+                <ion-input  type="number" placeholder="Whatsapp No.2" style="border: none;" disabled></ion-input >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-icon name="logo-whatsapp" class="iconSize" slot="start"></ion-icon>
+                <ion-input   type="number" placeholder="Whatsapp No.2" style="border: none;" disabled></ion-input >
+              </ion-item>
+             
+            </ion-list> 
+          </ion-col>
+          <ion-col size="12" size-sm="2" size-lg="3.7" size-md="3.7" style="margin:auto" class="ion-text-center">
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>
+              <div style="margin:auto">
+                <ion-button shape="round" class="sendBtn" disabled>SEND OTP</ion-button>
+              </div>            
+            </ion-col>
+           <ion-col size="12" size-sm="2" size-lg="3.3" size-md="3.3">
+              <ion-list  lines="none"class="ion-text-center" >
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>
+                <ion-item class="backenter">
+                  <ion-input type="number" placeholder="Enter OTP" disabled></ion-input>
+                </ion-item>  
+              </ion-list>
+            </ion-col>
+         
+        </ion-row>   
+        <ion-button shape="round" color="success" style="float:right;margin: 7px 12px 10px 10px;width:90px;height:33px">Submit</ion-button>
+       <div> 
+      <jqxButton style="margin:5px auto;float:right;background-color: green;border-radius: 20px;width:90px;color:white;height:35px;font-weight: 500;" (onClick)="saveBtn()">
+        UPDATE
+    </jqxButton>
+    <jqxButton style="margin:5px auto;float:right;background-color: crimson;border-radius: 20px;width:90px;color:white;height:35px;font-weight: 500;" (onClick)="cancelBtn()">
+        CANCEL
+    </jqxButton>
+    </div>
+    </ion-col>  
+    </ion-row>
+   </ion-col>
+  
+  </ion-row>
+</div>
+</jqxWindow>  
+</div>     
+</div>
+
+   </ion-content>
+
+

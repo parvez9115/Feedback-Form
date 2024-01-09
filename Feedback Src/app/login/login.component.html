@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/Logo 02.png"
+          style="width: 100%; height: 80%; position: absolute"
+        ></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1
+          style="
+            color: #3880ff;
+            text-align: center;
+            font-family: 'Times New Roman';
+          "
+          class="header"
+        >
+          TATA Motors
+        </h1>
+        <p
+          style="
+            font-style: italic;
+            text-align: center;
+            line-height: 0;
+            margin-top: 0px;
+            color: gray;
+          "
+          class="subHeader"
+        >
+          Let's get in touch
+        </p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/group-icon.png"
+          style="width: 100%; height: 100%; left: 20px"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="login">
+      <ion-row class="textBox">
+        <ion-col size="12" size-sm="6" size-lg="6" size-md="6">
+          <ion-list style="background: transparent" lines="none">
+            <ion-item class="backBorder">
+              <ion-icon name="people-circle" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Username"
+                formControlName="userName"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon
+                [name]="eye_icon"
+                class="iconSize"
+                (click)="showHidePass()"
+              ></ion-icon>
+              <ion-input
+                placeholder="password"
+                formControlName="password"
+                [type]="password_type"
+              ></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-row class="btn">
+            <ion-col
+              size="12"
+              size-sm="12"
+              size-lg="12"
+              size-md="12"
+              size-xl="12"
+              class="rowBtn"
+            >
+              <ion-button
+                routerLink="/adminregister"
+                [disabled]="login.valid"
+                (click)="reg()"
+                color="primary"
+                >REGISTER</ion-button
+              ><ion-button (click)="submit()" [disabled]="!login.valid"
+                >SUBMIT</ion-button
+              >
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <!-- <ion-row class="footer"><ion-col size="12"><u>Forgot password ?</u></ion-col></ion-row> -->
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

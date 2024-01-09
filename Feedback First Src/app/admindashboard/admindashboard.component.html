@@ -1,0 +1,55 @@
+
+
+<ion-content>
+    <div class="wrapper-container">
+     
+      <ion-row>
+        <ion-col size="2">
+          <ion-img src="assets/stage_3/Logo 02.png" style="width:100%;height:80%;position: absolute;"></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <h1 style="color: #3880ff;text-align: center;font-family: 'Times New Roman';" class="header">TATA Motors</h1>
+          <p style="font-style: italic;text-align: center;line-height: 0;margin-top: 0px;color:gray;" class="subHeader">Let's get in touch</p>
+        </ion-col>
+        <ion-col size="2">
+          <ion-img src="assets/stage_3/group-icon.png" style="width:100%;height:100%;left:20px;"></ion-img>
+        </ion-col>
+      </ion-row>
+      <div class="container">
+  <ion-row style="margin: 0px;">
+    <ion-col size="6" *ngFor="let name of dashboardData" >
+    <ion-card class="card"  [style.background-color]="name.color" (click)='routerUrl(name.name)' >
+    
+          <ion-card-content class="ion-text-center">
+            <ion-icon name='{{name.icon}}'  class="icon"></ion-icon>
+                <div class="cardText" >  {{name.name}}</div>
+      </ion-card-content>
+      </ion-card>
+    </ion-col>
+   </ion-row>
+   <ion-row style="margin: 0px;" routerLink='/adminSetting'>
+    <ion-col size="12"  > 
+    <ion-card class="card"  style="background-color: aquamarine;" >
+    
+          <ion-card-content class="ion-text-center">
+            <ion-icon name='settings'  class="icon"></ion-icon>
+                <div class="cardText" style="margin-top: 1%;" >Setting</div>
+      </ion-card-content>
+      </ion-card>
+    </ion-col>
+   </ion-row>
+   <!-- <ion-row>
+    <ion-col size="12" style="margin: 0px;">
+      <ion-card  class="settingCard">
+  
+          <ion-card-content class="ion-text-center" style="font-size: 20px;
+          font-weight: bold;">
+           <ion-icon name="settings" size="large"></ion-icon>
+                <div class="setting" > Setting</div>
+      </ion-card-content>
+      </ion-card>
+    </ion-col>
+   </ion-row> -->
+</div>
+   </div>
+</ion-content> 

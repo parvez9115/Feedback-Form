@@ -1,0 +1,217 @@
+
+<ion-content>
+  
+ <div class="wrapper-container">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img src="assets/stage_3/Logo 02.png" style="width:100%;height:80%;position: absolute;"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1 style="color: #3880ff;text-align: center;font-family: 'Times New Roman';" class="header">TATA Motors</h1>
+        <p style="font-style: italic;text-align: center;line-height: 0;margin-top: 0px;color:gray" class="subHeader">Let's get in touch</p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img src="assets/stage_3/group-icon.png" style="width:100%;height:100%;left:20px;"></ion-img>
+      </ion-col>
+    </ion-row>
+   
+    <ion-row>
+      <ion-col size="12" size-sm="12" size-md="6" size-lg="4" *ngFor='let details of data' style="padding:0px"> 
+    <ion-card  push="3" [ngClass]='{"runningCardBorder": details.status1 === "delighted", "stopCardBorder":details.status1 === "poor", "idleCardBorder":details.status1 === "happy", "noTransCardBorder":details.status1 === "satisfied",
+     "overspeedCardBorder": details.status1 == "notSatisfied"}'   >
+    <ion-card-content style="padding:0px; background-color: white;" >
+      <ion-row>
+        <ion-col size="12" style="padding-left:0px; padding:0px; ">
+          <ion-row>
+            <!-- <ion-col size="2" class="cardAlign" style="padding-top: 0px;margin-top: 0px;">
+             
+              
+            </ion-col> -->
+            <ion-col size="6" class="plateno">
+              <ion-icon name="person"  style="color:red"></ion-icon><span>{{details.customerName}} </span>
+            </ion-col>
+            <ion-col size="6" class="plateno" style="text-align: right;">
+              <ion-icon name="call" (click)="call(details.primaryContact)"  style="color:#1eb15d;    margin-top: 1px;"></ion-icon >  {{details.primaryContact}}
+            </ion-col>
+            <ion-col size="8" class="plateno">
+              <ion-icon name="car-outline"  style="color:rgb(10, 10, 10)"></ion-icon><span> {{details.vehicleRegNo}}</span>
+            </ion-col>
+            <ion-col size="4" style="padding: 2px 0px 0px 2px; font-weight: bold;font-size: 7px;text-align: right;" >
+              <ion-icon name="business-outline"  style="color:black;    margin-top: 1px;"></ion-icon><span>   {{details.companyName}}</span>
+            </ion-col>
+          </ion-row>
+        <ion-row >
+          <ion-col size="6" style="margin: 0px;
+          padding: 0px;">
+          <ion-label class="label"
+        [ngClass]='{"runningText": details.status1 === "delighted", "stopText":details.status1 === "poor", "idleText":details.status1 === "happy", "noTransText":details.status1 === "satisfied", "overspeedText": details.status1 === "notSatisfied"}'>
+        {{details.question1}}</ion-label>  
+        </ion-col>
+        <ion-col size="1" style="    padding-left: 22px; font-weight:600;padding: 5px 15px 0px;" class="ion-text-start">
+            
+          <ion-icon name="happy-outline"  [ngClass]='{"runningDriverBg": details.status1 === "delighted", "stopDriverBg":details.status1 === "poor", "idleDriverBg":details.status1 === "happy", "noTransDriverBg":details.status1 === "satisfied", "overspeedDriverBg": details.status1 == "notSatisfied"}'></ion-icon></ion-col><ion-col size="4.2" size-md="5" style="font-size: 11px;"> {{details.status1}}
+         
+        </ion-col>  
+        </ion-row>
+        <ion-row  style="font-size: 11px;    margin-left: 6px;    margin-top: -11px;">
+          <ion-col size="1" style="font-weight: bold;color: black;font-size: 17px;"><ion-icon name="mail-outline"></ion-icon></ion-col> 
+           <ion-col size="5">{{details.type1}}</ion-col>
+         <ion-col size="6" style="text-align: center;">
+           </ion-col>
+           <ion-row >
+             <ion-col style="text-align: center;margin-top:-17px;"> 
+             {{details.details1}} 
+         </ion-col> 
+           </ion-row> 
+      </ion-row>
+    
+      <ion-row >
+        <ion-col size="6" style="margin: 0px;
+        padding: 0px;">
+        <ion-label style='font-size: 9px; font-weight:bold;padding:2px 10px 2px 12px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;color: black;'
+      [ngClass]='{"runningText1": details.status2 === "delighted", "stopText1":details.status2 === "poor", "idleText1":details.status2 === "happy", "noTransText1":details.status2 === "satisfied", "overspeedText1": details.status2 === "notSatisfied"}'>
+      {{details.question2}}</ion-label>  
+      </ion-col>
+      <ion-col size="1" style="    padding-left: 22px; font-weight:600;padding: 5px 15px 0px;" class="ion-text-start">
+          
+        <ion-icon name="happy-outline"  
+         [ngClass]='{"runningDriverBg": details.status2 === "delighted", "stopDriverBg":details.status2 === "poor", "idleDriverBg":details.status2 === "happy", "noTransDriverBg":details.status2 === "satisfied", "overspeedDriverBg": details.status2 == "notSatisfied"}'></ion-icon></ion-col><ion-col size="4.2" size-md=4.2 style="font-size: 11px;"> {{details.status2}}
+       
+      </ion-col>  
+      </ion-row>
+      <ion-row  style="font-size: 11px;    margin-left: 6px;    margin-top: -11px;">
+        <ion-col size="1" style="font-weight: bold;color: black;font-size: 17px;"><ion-icon name="mail-outline"></ion-icon></ion-col> 
+         <ion-col size="5">{{details.type2}}</ion-col>
+       <ion-col size="6" style="text-align: center;">
+         </ion-col>
+         <ion-row >
+           <ion-col style="text-align: center;margin-top:-17px;"> 
+           {{details.details2}} 
+       </ion-col> 
+         </ion-row> 
+    </ion-row>
+        <!-- <ion-row  style="font-size: 11px;    margin-left: 6px;">
+          Would You Like Rate the Staff Who Provided Service?
+          Very nice experience
+      
+      </ion-row> -->
+<!--          
+          <ion-row >
+            <ion-spinner name="dots"></ion-spinner>
+          </ion-row> -->
+          <ion-row *ngIf='details.dateTime != ""'><ion-col class="ion-text-end" style="margin-top: -13px;"><ion-icon name="calendar" style="color: #3880ff;"></ion-icon> {{details.dateTime}}</ion-col></ion-row>
+          <ion-row *ngIf='details.branch != ""'><ion-col class="ion-text-end" style="margin-top: -13px;"><ion-icon name="globe" style="color: #3880ff;"></ion-icon>{{details.branch}}</ion-col></ion-row>
+        </ion-col>
+       
+       
+        
+        </ion-row>
+     
+     
+    </ion-card-content>
+    </ion-card>
+      </ion-col>
+      </ion-row>
+    </div>
+    </ion-content>
+  <!-- <ion-content>
+  
+ <div class="wrapper-container">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img src="assets/stage_3/Logo 02.png" style="width:100%;height:80%;position: absolute;"></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1 style="color: #3880ff;text-align: center;font-family: 'Times New Roman';" class="header">TATA Motors</h1>
+        <p style="font-style: italic;text-align: center;line-height: 0;margin-top: 0px;color:gray" class="subHeader">Let's get in touch</p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img src="assets/stage_3/group-icon.png" style="width:100%;height:100%;left:20px;"></ion-img>
+      </ion-col>
+    </ion-row>
+    
+    <ion-card style="border-left: 6px solid #1eb15d;">
+      <ion-card-content style="padding:0px; background-color: white;">
+        <ion-row  >
+          <ion-col size="12" style="padding-left:0px; padding:0px; ">
+            <ion-row>
+              
+              <ion-col size="6" class="plateno">
+                <ion-icon name="person"  style="color:red"></ion-icon><span> Jana</span>
+              </ion-col>
+              <ion-col size="3.8" class="plateno">
+                9551383012
+              </ion-col>
+              <ion-col size="1" class="plateno" style="color: #1eb15d;"(click)="call()">
+                <ion-icon name="call"></ion-icon>
+              </ion-col>
+            </ion-row>
+         
+            <ion-row *ngIf='pageName != "movementReport"' style="padding: 0px;margin: 0px;">
+              <ion-col style="padding: 0px;margin: 0px;">
+                <ion-row class="odometer">
+                  <ion-col size="1" style="margin-left: 10px;">
+                    <ion-icon name="reader" style="float:right;color:grey;font-size: 15px;"></ion-icon>
+                  </ion-col>
+                  <ion-col size="2.5" style="    margin-top: 2px;float: left;margin-left: 0px;padding-left: 0px; padding-right: 0px;">
+                    Vehicle No
+                  </ion-col>
+                  <ion-col size="1">
+                    <ion-icon name="business" style="float:right;color:grey;font-size: 15px;"></ion-icon>
+                  </ion-col>
+                  <ion-col size="2.5" style="    margin-top: 2px;float: left;margin-left: 0px;padding-left: 0px; padding-right: 0px;">
+                    Company Name
+                  </ion-col>
+                  <ion-col size="2" style=" margin-left: 23px; ">
+                    <ion-icon name="happy" style="margin-left:14px;float:right;color:#1eb15d;font-size: 15px;"></ion-icon>
+                  </ion-col>
+                  
+                </ion-row>
+      
+                <ion-row style="font-size:13px;font-weight: bold;line-height: 0px;margin-top: 0px;    font-size: 11px;">
+                  <ion-col size="3.4" class="ion-text-center">
+                    Tn 14 hj 5893
+                  </ion-col>
+                  <ion-col size="3.4"  style="font-size: 10px;    padding-left: 45px;">
+                    APM
+                  </ion-col>
+                  <ion-col size="5.2" style="font-size:11px;    padding-left: 22px; font-weight:600;padding: 5px 15px 0px;" class="ion-text-start">
+              
+                    <span style="margin-left: 43%;">  Happy </span>
+                  
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+           <ion-row>
+              <ion-label style='font-size: 9px; font-weight:bold;margin-top: 8px;
+            color: white;padding:2px 10px 2px 12px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;'
+            [ngClass]='{"runningDriverBg": "Running" === "Running"}'>
+            Suggestion    </ion-label>
+               
+            </ion-row>
+            <ion-row  style="font-size: 11px;    margin-left: 6px;">
+              <ion-col size="5">How was the overall experience?</ion-col><ion-col size="1" style="font-weight: bold;color: black;font-size: 17px;">-</ion-col>
+             <ion-col size="6"> Very nice experienceVery nice experienceVery 
+               </ion-col>
+            
+          </ion-row>
+          <ion-row  style="font-size: 11px;    margin-left: 6px;">
+            <ion-col size="5">Would You Like Rate the Staff Who Provided Service?</ion-col><ion-col size="1" style="font-weight: bold;color: black;font-size: 17px;">-</ion-col>
+           <ion-col size="6"> Very nice experienceVery nice experienceVery 
+             </ion-col>
+             
+        </ion-row>
+        
+          </ion-col>
+         
+         
+          
+          </ion-row>
+       
+       
+      </ion-card-content>
+      </ion-card>
+      
+      </div>
+      </ion-content> -->

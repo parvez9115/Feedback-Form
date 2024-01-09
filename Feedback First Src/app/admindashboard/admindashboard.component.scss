@@ -1,0 +1,117 @@
+.wrapper-container{
+    background: url("../../assets/stage_3/custmerFeeder.jpg");
+    background-size: cover;
+//    background-repeat: no-repeat;
+    background-position: center center;
+    // opacity: 0.6;
+    background-color: white;
+ height: 100%;
+  }
+  @media only screen and (min-width: 768px)  {
+    .card{
+        background-color:#ebb68bf1;color: black;margin: 0px;border-radius: 10px;border: 2px solid black;
+     }
+    //  .container{
+        // margin-top: 80px;
+    // }
+    .cardText{
+        margin-top: 4%;
+        font-size: 23px;
+        font-weight: bold;
+    }
+// .cardText{
+//     margin-top: 8%;
+//     font-size: 134%;
+// }
+// .card{
+//     height: 220%;background-color: rgb(114, 170, 245);color: black;
+// }
+.header{
+    color: #3880ff;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 30px;
+}
+.subHeader{
+    font-size: 12px;
+}
+.icon{
+   font-size:39px;
+}
+
+}
+@media only screen and (max-width: 500px) and (max-width: 600px) { 
+    .cardText{
+        margin-top: 4%;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .card{
+   background-color:#ebb68bf1;color: black;margin: 0px;border-radius: 10px;border: 2px solid black;
+}
+// #a8a9acf1
+.setting{
+    margin-top: 3%;
+}
+// .container{
+//     margin-top: 50px;
+// }
+.header{
+    color: #3880ff;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 22px;
+}
+.subHeader{
+    font-size: 12px;
+}
+.settingCard{
+    margin: 0px;background-color: rgb(114, 170, 245);color: black;border-radius: 10px;
+}
+.icon{
+    font-size:24px;
+ }
+}
+// ion-card{
+//     width: 120px;
+//     height: 122px;
+//     margin-left: 6px;
+//   }
+@media only screen and (min-width: 1440px)  {
+    .card{
+        background-color:#ebb68bf1;color: black;margin: 0px;border-radius: 10px;border: 2px solid black;
+     }
+    //  .container{
+    //     margin-top: 80px;
+    // }
+    .cardText{
+        margin-top: 4%;
+        font-size: 23px;
+        font-weight: bold;
+    }
+// .cardText{
+//     margin-top: 8%;
+//     font-size: 134%;
+// }
+// .card{
+//     height: 220%;background-color: rgb(114, 170, 245);color: black;
+// }
+.header{
+    color: #3880ff;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 59px;
+}
+.subHeader{
+    font-size: 25px;
+}
+.icon{
+   font-size:39px;
+}
+}
