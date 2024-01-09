@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <div class="feed-container">
+      <ion-row>
+        <ion-col size="2" style="margin: 10px auto">
+          <ion-img src="assets/stage_3/Logo 02.png" style="width: 35%; height: 60%; margin: auto"></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <h1 style="
+              color: #3880ff;
+              text-align: center;
+              font-weight: 500;
+              margin-bottom: 0;
+            ">
+            Tata Africa Holdings Tanzania Limited
+          </h1>
+          <p style="
+              font-style: italic;
+              text-align: center;
+              color: gray;
+              margin-top: 0;
+            ">
+            Let's get in touch
+          </p>
+        </ion-col>
+        <ion-col size="2">
+          <ion-img src="assets/stage_3/group-icon.png" style="width: 50%; height: 60%; margin: auto"></ion-img>
+        </ion-col>
+      </ion-row>
+
+      <swiper-container #swiper (afterinit)="swiperReady()" (slideschange)="swiperSlideChanged($event)" [loop]="true"
+        [pagination]="true" [slidesPerView]="1" [initailSlide]="true" [autoplay]="true">
+        <swiper-slide>
+          <ion-img src="assets/stage_3/changeimg4.jpg" style="width: 95%"></ion-img></swiper-slide>
+        <swiper-slide>
+          <ion-img src="assets/stage_3/image3.jpeg" style="width: 95%"></ion-img></swiper-slide>
+      </swiper-container>
+      <div style="margin: auto; text-align: center; position: relative">
+        <ion-button fill="outline" style="z-index: 1; width: 20em" (click)="skip()" routerLink="/home">
+          Skip to Login</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

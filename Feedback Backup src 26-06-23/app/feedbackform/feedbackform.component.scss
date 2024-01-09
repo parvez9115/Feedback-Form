@@ -1,0 +1,171 @@
+* {
+  margin-top: 10px;
+  margin: auto;
+}
+.experienceHeader {
+  font-style: italic;
+}
+.suggestionBtn {
+  font-size: 10px;
+  width: 100%;
+  margin: auto;
+}
+.sugBtncol {
+  margin: 0;
+}
+.feedBack {
+  font-size: 12px;
+  border: 1px solid #3880ff;
+  border-radius: 5px;
+  color: gray;
+  background-color: white;
+  padding: 4px;
+}
+.feedback-wrapper {
+  background: url("../../assets/stage_3/custmerFeeder.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.8;
+  background-color: white;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .feedback-wrapper {
+    background-position: bottom center;
+  }
+}
+
+.separationButton {
+  text-align: center;
+  margin: auto;
+  padding: 10px 0px;
+  font-size: 0.5rem;
+  width: 50px;
+}
+.btn-primary {
+  border: 1px solid #3880ff;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.btn_active {
+  border: 1px solid #ffff;
+  outline: none;
+  background-color: #3880ff;
+  color: white;
+  opacity: 0.8;
+}
+
+.seg.segment-button-checked {
+  --color-checked: green;
+}
+.seg,
+.happy,
+.notSatisfy,
+.poor,
+.satifaction {
+  color: black;
+}
+.satifaction.segment-button-checked {
+  --color-checked: yellow;
+}
+.happy.segment-button-checked {
+  --color-checked: #04f704;
+}
+.notSatisfy.segment-button-checked {
+  --color-checked: rgb(255, 153, 0);
+}
+.poor.segment-button-checked {
+  --color-checked: red;
+}
+
+.iconSize {
+  width: 50px;
+  height: 50px;
+  padding-bottom: 10px;
+}
+@media only screen and (max-width: 750px) {
+  // .feedback-wrapper {
+  //   background-position: center right;
+  //   background-size: cover;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+@media only screen and (max-width: 762px) {
+  .experienceHeader {
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+  }
+  .separationButton {
+    margin: 0px -15px 10px -15px;
+  }
+  .feedback-container {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  // .feedback-wrapper{
+  //   width: 100%;
+  //   margin: 10px auto 0;
+  //   height: 160vh;
+  //   background-position: center right;
+  //   background-size: cover;
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
+@media only screen and (min-width: 762px) and (max-width: 1024px) {
+  .experienceHeader {
+    font-size: 17px;
+  }
+  .feedback-container {
+    margin: 0px 10px 10px 20px;
+  }
+  // .feedback-wrapper{
+  //   margin: 15px;
+  //   height: calc(100vh - 87px);
+  //   width: 95%;
+  // }
+  .iconSize {
+    width: 50px;
+    height: 50px;
+  }
+}
+// @media only screen and (max-width: 768px) {
+//     .feedback-wrapper {
+//     background-position: -140px 13px;
+//   }
+
+// }
+@media only screen and (min-width: 1024px) {
+  .experienceHeader {
+    font-size: 22px;
+  }
+  .feedback-container {
+    padding: 0px 30px;
+    margin: 0px;
+    height: 100%;
+  }
+
+  // .feedback-wrapper{
+  //   width: 94%;
+  //   margin: 30px auto 30px;
+  //   height: 80vh;
+  // }
+  .iconSize {
+    width: 60px;
+    height: 60px;
+  }
+}

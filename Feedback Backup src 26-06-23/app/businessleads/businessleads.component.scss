@@ -1,0 +1,47 @@
+/*Login Page*/
+// *{
+//   margin: auto;
+//   text-align: center;
+// }
+// .txtfeild{
+//   border: 1px solid rgb(4, 139, 230);
+//   border-radius: 5px;
+//   margin: 15px;
+//   color:#c5c1c1;
+// }
+// .feed-container{
+//   padding: 10px;
+// }
+.iconSize {
+  font-size: 20px;
+  color: rgb(9, 116, 240);
+  border-right: 1px solid #c2c4c5;
+  margin-right: 10px;
+  padding-right: 5px;
+}
+ion-item {
+  height: 45px;
+  margin: 5px;
+  font-size: 12px;
+}
+.wrapper-container {
+  background: url("../../assets/stage_3/custmerFeeder.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.8;
+  background-color: white;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper-container {
+    background-position: bottom center;
+  }
+}
+.backBorder {
+  border: 1px solid #bdcaf1;
+  border-radius: 5px;
+}
+.list-md {
+  margin-top: 15px;
+}

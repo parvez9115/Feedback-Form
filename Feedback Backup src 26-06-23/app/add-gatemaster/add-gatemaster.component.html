@@ -1,0 +1,98 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/Logo 02.png"
+          style="width: 100%; height: 80%; position: absolute"
+        ></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1
+          style="
+            color: #3880ff;
+            text-align: center;
+            font-family: 'Times New Roman';
+          "
+          class="header"
+        >
+          Add Gate Details
+        </h1>
+        <p
+          style="
+            font-style: italic;
+            text-align: center;
+            line-height: 0;
+            margin-top: 0px;
+            color: gray;
+          "
+          class="subHeader"
+        >
+          Let's get in touch
+        </p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/group-icon.png"
+          style="width: 100%; height: 100%; left: 20px"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="admin">
+      <ion-row class="textBox">
+        <ion-col size="12" size-sm="6" size-lg="6" size-md="6">
+          <ion-list style="background: transparent" lines="none">
+            <ion-item class="backBorder">
+              <ion-icon name="person" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Gate Name"
+                formControlName="gatename"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="briefcase" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Description"
+                formControlName="description"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="mail-open" class="iconSize"></ion-icon>
+              <ion-checkbox
+                value="valuesss = 0"
+                formControlName="checkbox"
+                (click)="get()"
+                >Active</ion-checkbox
+              >
+            </ion-item>
+          </ion-list>
+          <ion-row class="btn">
+            <ion-col
+              size="12"
+              size-sm="12"
+              size-lg="12"
+              size-md="12"
+              size-xl="12"
+              class="rowBtn"
+              ><ion-button
+                *ngIf="!hideSerialNo"
+                [disabled]="!admin.valid"
+                (click)="submit('add')"
+                >SUBMIT</ion-button
+              >
+              <ion-button
+                *ngIf="hideSerialNo"
+                [disabled]="!admin.valid"
+                (click)="submit('edit')"
+                >Edit</ion-button
+              >
+              <ion-button (click)="clear()">clear</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </form>
+  </div>
+</ion-content>

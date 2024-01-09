@@ -1,0 +1,131 @@
+/*JQX-Grid*/
+.exportBtnImg {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 11px;
+  left: 41px;
+}
+.feedback-wrapper {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+.wrapper-container::-webkit-scrollbar {
+  width: 5px;
+  height: 10%;
+}
+
+/* Track */
+.wrapper-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.wrapper-container::-webkit-scrollbar-thumb {
+  background: rgb(14, 168, 240);
+}
+
+/* Handle on hover */
+.wrapper-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(158, 213, 238);
+}
+.wrapper-container {
+  height: 80%;
+  padding: 5px 2px 0px;
+  overflow-y: scroll;
+}
+.image-container,
+.imagegroup-container {
+  width: 35%;
+  height: 60%;
+  margin: 5px auto;
+}
+.imagegroup-container {
+  width: 45%;
+}
+@media only screen and (max-width: 768px) {
+  .imagegroup-container {
+    width: 86%;
+    //margin:5px 0 0;
+  }
+  .image-container {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .imagegroup-container {
+    width: 25%;
+    height: 50%;
+  }
+  .image-container {
+    width: 35%;
+    height: 50%;
+  }
+  .heading-container {
+    height: 12%;
+  }
+}
+
+ion-item {
+  margin: 5px 0;
+  background: transparent !important;
+}
+ion-list {
+  background: transparent !important;
+}
+.back {
+  background: transparent !important;
+}
+
+ion-input {
+  font-size: 12px;
+  font-weight: 200px;
+}
+.back {
+  --background: transparent;
+}
+.backBorder {
+  border: 1px solid #bdcaf1;
+  border-radius: 5px;
+}
+.iconSize {
+  font-size: 20px;
+  color: rgb(9, 116, 240);
+  border-right: 1px solid #c2c4c5;
+  margin-right: 10px;
+  padding-right: 5px;
+}
+
+.feedback-container {
+  padding: 10px;
+}
+.backenter {
+  border: 2px solid rgb(9, 116, 240);
+  border-radius: 20px;
+  text-align: center;
+}
+ion-item {
+  height: 45px;
+}
+.sendBtn {
+  margin: 10px 0px 5px;
+  font-size: 12px;
+}
+h1 {
+  margin: 0px 0px 7px;
+}
+
+.popup-container {
+  background: url("../../assets/stage_3/custmerFeeder.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.8;
+  background-color: white;
+}
+@media only screen and (min-width: 768px) {
+  .popup-container {
+    background-position: bottom center;
+  }
+}
