@@ -1,0 +1,421 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <div class="feedback-container">
+      <ion-row>
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/Logo 02.png"
+            style="width: 100%; height: 80%; position: absolute"
+          ></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <h1 style="color: #3880ff; text-align: center; font-weight: 500">
+            FeedBack Form
+          </h1>
+          <p
+            style="
+              font-style: italic;
+              text-align: center;
+              line-height: 0;
+              margin-top: 0px;
+              color: gray;
+            "
+          >
+            Let's get in touch
+          </p>
+        </ion-col>
+        <!-- <ion-col size="1.5">
+          <ion-button shape="round" color="primary" routerLink='/registerform' style="width:110%;font-size: 9px;"  >{{'welcome'+name}}
+          </ion-button>
+        </ion-col> -->
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/group-icon.png"
+            style="width: 100%; height: 100%; position: absolute; left: 20px"
+          ></ion-img>
+        </ion-col>
+      </ion-row>
+      <form [formGroup]="details">
+        <ion-row>
+          <ion-col
+            size-lg="9"
+            size-sm="6"
+            size-md="12"
+            style="margin: auto; text-align: center"
+          >
+            <ion-row>
+              <ion-col size="12" size-sm="12" size-lg="4" size-md="4">
+                <ion-list style="background: transparent" lines="none">
+                  <ion-item class="backBorder">
+                    <ion-icon
+                      name="people"
+                      class="iconSize"
+                      slot="start"
+                    ></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ name }}"
+                      formControlName="name"
+                      autofocus="true"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="home" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      formControlName="nationalId"
+                      placeholder="{{ nationalId }}"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="people-circle" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ customerId }}"
+                      formControlName="customerId"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="business" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ companyName }}"
+                      formControlName="companyName"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="car-sport" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ vehicleregistrationNo }}"
+                      formControlName="vehicleregistrationNo"
+                    ></ion-input>
+                  </ion-item>
+
+                  <ion-item class="backBorder">
+                    <ion-icon name="man" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ position }}"
+                      formControlName="position"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="car-sport" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ town }}"
+                      formControlName="town"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="location" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ country }}"
+                      formControlName="country"
+                    ></ion-input>
+                  </ion-item>
+                  <ion-item class="backBorder">
+                    <ion-icon name="location" class="iconSize"></ion-icon>
+                    <ion-input
+                      type="text"
+                      placeholder="{{ memberNo }}"
+                      formControlName="memberNo"
+                    ></ion-input>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+              <ion-col
+                size="12"
+                size-sm="12"
+                size-lg="8"
+                size-md="8"
+                style="margin: 0; padding: 0"
+              >
+                <ion-row style="margin: 0; padding: 0">
+                  <ion-col size="12" size-sm="12" size-lg="5" size-md="5">
+                    <ion-list lines="none">
+                      <ion-item class="backBorder">
+                        <!-- <ion-icon name="call"  class="iconSize" slot="start"></ion-icon> -->
+                        <ion-img
+                          src="assets/stage_3/images/02.gif"
+                          style="width: 26px; height: 21px; margin-right: 9px"
+                          class="iconSize"
+                          slot="start"
+                        >
+                        </ion-img>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ primaryContact }}"
+                          formControlName="primaryContact"
+                          #a
+                          (ionChange)="myFunction('number1')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item class="backBorder">
+                        <ion-img
+                          src="assets/stage_3/images/03.gif"
+                          style="margin-right: 9px; padding-right: 10px"
+                          class="iconSize"
+                          slot="start"
+                        >
+                        </ion-img>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ secondaryContact }}"
+                          #b
+                          formControlName="secondaryContact"
+                          (ionChange)="myFunction('number2')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item class="backBorder">
+                        <ion-img
+                          src="assets/stage_3/images/05.gif"
+                          style="margin-right: 12px; padding-right: 10px"
+                          class="iconSize"
+                          slot="start"
+                        >
+                        </ion-img>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ mobile3 }}"
+                          #c
+                          formControlName="mobile3"
+                          (ionChange)="myFunction('number3')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item class="backBorder">
+                        <ion-img
+                          src="assets/stage_3/images/05.gif"
+                          style="margin-right: 12px; padding-right: 10px"
+                          class="iconSize"
+                          slot="start"
+                        >
+                        </ion-img>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ mobile4 }}"
+                          #d
+                          formControlName="mobile4"
+                          (ionChange)="myFunction('number4')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item class="backBorder">
+                        <ion-img
+                          src="assets/stage_3/images/05.gif"
+                          style="margin-right: 12px; padding-right: 10px"
+                          class="iconSize"
+                          slot="start"
+                        >
+                        </ion-img>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ mobile5 }}"
+                          #e
+                          formControlName="mobile5"
+                          (ionChange)="myFunction('number5')"
+                        ></ion-input>
+                      </ion-item>
+
+                      <ion-item class="backBorder">
+                        <ion-icon
+                          name="logo-whatsapp"
+                          class="iconSize"
+                        ></ion-icon>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ mobile6 }}"
+                          #f
+                          formControlName="mobile6"
+                          (ionChange)="myFunction('number6')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item class="backBorder">
+                        <ion-icon
+                          name="logo-whatsapp"
+                          class="iconSize"
+                        ></ion-icon>
+                        <ion-input
+                          type="number"
+                          placeholder="{{ mobile7 }}"
+                          #g
+                          formControlName="mobile7"
+                          (ionChange)="myFunction('number7')"
+                        ></ion-input>
+                      </ion-item>
+                    </ion-list>
+                  </ion-col>
+                  <ion-col
+                    size="12"
+                    size-sm="12"
+                    size-lg="3.7"
+                    size-md="3.7"
+                    style="margin: auto"
+                    class="ion-text-center"
+                  >
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        class="sendBtn"
+                        color="{{ btnClr1 }}"
+                        [disabled]="sendBtn1"
+                        (click)="getOtp(a, 'mobile1')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        class="sendBtn"
+                        [disabled]="sendBtn2"
+                        color="{{ btnClr2 }}"
+                        (click)="getOtp(b, 'mobile2')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        class="sendBtn"
+                        [disabled]="sendBtn3"
+                        color="{{ btnClr3 }}"
+                        (click)="getOtp(c, 'mobile3')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        [disabled]="sendBtn4"
+                        color="{{ btnClr4 }}"
+                        class="sendBtn"
+                        color="{{ btnClr4 }}"
+                        (click)="getOtp(d, 'mobile4')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        class="sendBtn"
+                        [disabled]="sendBtn5"
+                        color="{{ btnClr5 }}"
+                        (click)="getOtp(e, 'mobile5')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        class="sendBtn"
+                        [disabled]="sendBtn6"
+                        color="{{ btnClr6 }}"
+                        (click)="getOtp(f, 'mobile6')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                    <div style="margin: auto">
+                      <ion-button
+                        shape="round"
+                        class="sendBtn"
+                        [disabled]="sendBtn7"
+                        color="{{ btnClr7 }}"
+                        (click)="getOtp(g, 'mobile7')"
+                        >{{ sendOtp }}</ion-button
+                      >
+                    </div>
+                  </ion-col>
+
+                  <ion-col size="12" size-sm="12" size-lg="3.3" size-md="3.3">
+                    <ion-list lines="none" class="ion-text-center">
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(a, 'mobile1')"
+                          formControlName="otp1"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color1 }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(b, 'mobile2')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color2 }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(c, 'mobile3')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color3 }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(d, 'mobile4')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color4 }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(e, 'mobile5')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color5 }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(f, 'mobile6')"
+                        ></ion-input>
+                      </ion-item>
+                      <ion-item
+                        class="backenter"
+                        [ngStyle]="{ 'border-color': color6 }"
+                      >
+                        <ion-input
+                          type="number"
+                          placeholder="{{ enterOtp }}"
+                          (ionChange)="verify(g, 'mobile7')"
+                        ></ion-input>
+                      </ion-item>
+                    </ion-list>
+                  </ion-col>
+                  <ion-button
+                    shape="round"
+                    color="success"
+                    (click)="submit()"
+                    style="width: 50%; margin-left: 45%; margin-top: 6%"
+                    [disabled]="!details.valid"
+                    >Submit
+                  </ion-button>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+  </div>
+</ion-content>

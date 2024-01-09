@@ -1,0 +1,149 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/Logo 02.png"
+          style="width: 100%; height: 80%; position: absolute"
+        ></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1
+          style="
+            color: #3880ff;
+            text-align: center;
+            font-family: 'Times New Roman';
+          "
+          class="header"
+        >
+          Gate Pass Details
+        </h1>
+        <p
+          style="
+            font-style: italic;
+            text-align: center;
+            line-height: 0;
+            margin-top: 0px;
+            color: gray;
+          "
+          class="subHeader"
+        >
+          Let's get in touch
+        </p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/group-icon.png"
+          style="width: 100%; height: 100%; left: 20px"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="textBox">
+      <ion-col size="12" size-sm="6" size-lg="6" size-md="6">
+        <form [formGroup]="admin">
+          <ion-list style="background: transparent" lines="none">
+            <ion-item class="backBorder">
+              <ion-icon name="person" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Name"
+                formControlName="personname"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="phone-portrait" class="iconSize"></ion-icon>
+              <ion-input
+                type="Number"
+                placeholder="Phone Number"
+                formControlName="phonenumber"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="car" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Vehicle Register Number "
+                formControlName="vnumber"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="at" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Enter e-mail Id "
+                formControlName="mail"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="home" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Address"
+                formControlName="address"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="home" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Remarks"
+                formControlName="remarks"
+              ></ion-input>
+            </ion-item>
+          </ion-list>
+        </form>
+
+        <ion-row>
+          <ion-col style="text-align: center"
+            ><ion-button
+              size="small"
+              [disabled]="!admin.valid"
+              (click)="submit()"
+              >SUBMIT</ion-button
+            >
+            <ion-button size="small" (click)="close()">close</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col *ngIf="show == true">
+        <div id="print" style="visibility: hidden">
+          <table>
+            <tr>
+              <td rowspan="3">
+                <img
+                  src="https://api.qrserver.com/v1/create-qr-code/?data={{
+                    values
+                  }}&size=100x100"
+                  alt=""
+                  title=""
+                />
+              </td>
+              <td style="padding-left: 30px">
+                <span style="font-size: 16px; font-weight: bold">Name : </span>
+                {{ display[0] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 30px">
+                <span style="font-size: 16px; font-weight: bold"
+                  >Phone No :
+                </span>
+                {{ display[1] }}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 30px">
+                <span style="font-size: 16px; font-weight: bold"
+                  >Vehicle No :
+                </span>
+                {{ display[2] }}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

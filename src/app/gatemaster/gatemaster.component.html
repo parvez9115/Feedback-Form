@@ -1,0 +1,93 @@
+<ion-content [fullscreen]="true">
+  <div class="feedback-wrapper">
+    <div class="heading-container">
+      <ion-row>
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/Logo 02.png"
+            class="image-container"
+          ></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <h2
+            style="
+              color: #3880ff;
+              font-weight: 600;
+              font-size: 20px;
+              margin: 5px auto;
+              letter-spacing: 3px;
+            "
+            class="ion-text-center"
+          >
+            Gate Master Details
+          </h2>
+          <p
+            style="font-style: italic; font-size: 11px; margin: 0px 5px"
+            class="ion-text-center"
+          >
+            Let's get in touch
+          </p>
+        </ion-col>
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/group-icon.png"
+            class="imagegroup-container"
+          ></ion-img>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="wrapper-container">
+      <ion-row>
+        <ion-col>
+          <ion-img
+            *ngIf="myPlatform == 'desktop'"
+            (click)="exportToExcel()"
+            title="Download"
+            src="../../assets/microsoft-excel-icon.svg"
+            style="height: 25px; width: 25px; float: right; margin: 10px"
+          >
+          </ion-img>
+          <ion-button
+            style="float: right; --background: white; color: rgb(9, 248, 9)"
+            (click)="add('edit')"
+            >Edit
+            <ion-icon name="add-circle" class="toolbar-icon"></ion-icon>
+          </ion-button>
+          <ion-button
+            style="float: right; --background: white; color: rgb(9, 248, 9)"
+            (click)="add('add')"
+            >Add
+            <ion-icon name="add-circle" class="toolbar-icon"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <jqxGrid
+        [source]="employeeAdapter"
+        (onRowclick)="myGridOnRowSelect($event)"
+        (onRowselect)="myGridOnRowclick($event)"
+        [width]="'100%'"
+        [columns]="columns"
+        [rowdetails]="true"
+        [sortable]="true"
+        [filterable]="true"
+        [columns]="columns"
+        [theme]="'energyblue'"
+        [altrows]="true"
+        [pageable]="true"
+        [autoheight]="true"
+        [showfilterrow]="true"
+        #myGrid
+        [theme]="'energyblue'"
+        style="
+          margin: auto;
+          font-size: 11px;
+          font-weight: 500;
+          text-align: center;
+        "
+      >
+      </jqxGrid>
+    </div>
+  </div>
+</ion-content>

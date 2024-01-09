@@ -1,0 +1,298 @@
+<ion-content [fullscreen]="true">
+  <div class="feedback-wrapper">
+    <div class="heading-container">
+      <ion-row>
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/Logo 02.png"
+            class="image-container"
+          ></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <h2
+            style="
+              color: #3880ff;
+              font-weight: 600;
+              font-size: 20px;
+              margin: 5px auto;
+              letter-spacing: 3px;
+            "
+            class="ion-text-center"
+          >
+            Gate Entry Report
+          </h2>
+          <p
+            style="font-style: italic; font-size: 11px; margin: 0px 5px"
+            class="ion-text-center"
+          >
+            Let's get in touch
+          </p>
+        </ion-col>
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/group-icon.png"
+            class="imagegroup-container"
+          ></ion-img>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div class="wrapper-container">
+      <!-- <ion-row>
+        <ion-col>
+          <ion-button
+            (click)="exportToExcel()"
+            style="float: right; --background: white; color: rgb(9, 248, 9)"
+          >
+            Excel
+            <ion-icon
+              name="download"
+              style="font-size: 20px; float: right"
+            ></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row> -->
+      <!-- <ion-button
+        (click)="createPdf()"
+        style="
+          width: 120px;
+          height: 30px;
+          float: right;
+          --background: white;
+          color: rgb(248, 11, 11);
+        "
+      >
+        PDF
+        <ion-icon
+          name="download"
+          style="font-size: 20px; float: right"
+        ></ion-icon>
+      </ion-button> -->
+
+      <ion-row *ngIf="myPlatform != 'desktop'" class="textBox">
+        <ion-col size="12" size-sm="6" size-lg="6" size-md="6">
+          <form [formGroup]="gateentryreport">
+            <ion-list style="background: transparent" lines="none">
+              <ion-item class="backBorder">
+                <ion-icon name="home" class="iconSize"></ion-icon>
+                <ion-select
+                  type="text"
+                  placeholder="Gate Name"
+                  formControlName="gatename"
+                >
+                  <ion-select-option
+                    *ngFor="let namelist of gatenamelist"
+                    [value]="namelist"
+                    >{{ namelist }}</ion-select-option
+                  ></ion-select
+                >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-icon name="car" class="iconSize"></ion-icon>
+                <ion-select
+                  type="text"
+                  placeholder="Vehicle No"
+                  formControlName="vehicleno"
+                >
+                  <ion-select-option
+                    *ngFor="let vehiclelist of vehiclelist"
+                    [value]="vehiclelist"
+                    >{{ vehiclelist }}</ion-select-option
+                  ></ion-select
+                >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-icon name="call" class="iconSize"></ion-icon>
+                <ion-select
+                  type="text"
+                  placeholder="Mobile No"
+                  formControlName="mobileno"
+                >
+                  <ion-select-option
+                    *ngFor="let numberlist of numberlist"
+                    [value]="numberlist"
+                    >{{ numberlist }}</ion-select-option
+                  ></ion-select
+                >
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-input
+                  label="From Date"
+                  type="Date"
+                  formControlName="fromdate"
+                ></ion-input>
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-input
+                  label="To Date"
+                  type="Date"
+                  formControlName="todate"
+                ></ion-input>
+              </ion-item>
+              <ion-item class="backBorder">
+                <ion-icon name="person" class="iconSize"></ion-icon>
+                <ion-select
+                  type="text"
+                  placeholder="Customer Name"
+                  formControlName="customername"
+                >
+                  <ion-select-option
+                    *ngFor="let customrnamelist of customerlist"
+                    [value]="customrnamelist"
+                    >{{ customrnamelist }}</ion-select-option
+                  ></ion-select
+                >
+              </ion-item>
+            </ion-list>
+          </form>
+
+          <ion-row>
+            <ion-col style="text-align: center">
+              <ion-button
+                size="small"
+                [disabled]="!gateentryreport.valid"
+                (click)="submit()"
+                >Submit</ion-button
+              >
+              <ion-button size="small" (click)="clear()">Clear</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="myPlatform == 'desktop'">
+        <ion-col>
+          <form [formGroup]="gateentryreport">
+            <ion-row style="margin-left: 10%">
+              <ion-col size="2.5">
+                <ion-item class="backBorder">
+                  <ion-icon name="home" class="iconSize"></ion-icon>
+                  <ion-select
+                    type="text"
+                    placeholder="Gate Name"
+                    formControlName="gatename"
+                  >
+                    <ion-select-option
+                      *ngFor="let namelist of gatenamelist"
+                      [value]="namelist"
+                      >{{ namelist }}</ion-select-option
+                    ></ion-select
+                  >
+                </ion-item>
+              </ion-col>
+              <ion-col size="2.5">
+                <ion-item class="backBorder">
+                  <ion-icon name="car" class="iconSize"></ion-icon>
+                  <ion-select
+                    type="text"
+                    placeholder="Vehicle No"
+                    formControlName="vehicleno"
+                  >
+                    <ion-select-option
+                      *ngFor="let vehiclelist of vehiclelist"
+                      [value]="vehiclelist"
+                      >{{ vehiclelist }}</ion-select-option
+                    ></ion-select
+                  >
+                </ion-item>
+              </ion-col>
+              <ion-col size="2.5">
+                <ion-item class="backBorder">
+                  <ion-icon name="call" class="iconSize"></ion-icon>
+                  <ion-select
+                    type="text"
+                    placeholder="Mobile No"
+                    formControlName="mobileno"
+                  >
+                    <ion-select-option
+                      *ngFor="let numberlist of numberlist"
+                      [value]="numberlist"
+                      >{{ numberlist }}</ion-select-option
+                    ></ion-select
+                  >
+                </ion-item>
+              </ion-col>
+              <ion-col size="2.7">
+                <ion-item class="backBorder">
+                  <ion-input
+                    label="From Date"
+                    type="Date"
+                    formControlName="fromdate"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row style="margin-left: 10%">
+              <ion-col size="2.5">
+                <ion-item class="backBorder">
+                  <ion-input
+                    label="To Date"
+                    type="Date"
+                    formControlName="todate"
+                  ></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="2.5">
+                <ion-item class="backBorder">
+                  <ion-icon name="person" class="iconSize"></ion-icon>
+                  <ion-select
+                    type="text"
+                    placeholder="Customer Name"
+                    formControlName="customername"
+                  >
+                    <ion-select-option
+                      *ngFor="let customrnamelist of customerlist"
+                      [value]="customrnamelist"
+                      >{{ customrnamelist }}</ion-select-option
+                    ></ion-select
+                  >
+                </ion-item>
+              </ion-col>
+              <ion-col
+                size="2.5"
+                style="text-align: center; align-self: center"
+              >
+                <ion-button
+                  size="small"
+                  [disabled]="!gateentryreport.valid"
+                  (click)="submit()"
+                  >Submit</ion-button
+                >
+                <ion-button size="small" (click)="clear()">Clear</ion-button>
+              </ion-col>
+            </ion-row>
+          </form>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <jqxGrid
+            *ngIf="show"
+            [source]="employeeAdapter"
+            [width]="'100%'"
+            [columns]="columns"
+            [rowdetails]="true"
+            [sortable]="true"
+            [filterable]="true"
+            [columns]="columns"
+            [theme]="'energyblue'"
+            [altrows]="true"
+            [pageable]="true"
+            [showfilterrow]="true"
+            [autoheight]="true"
+            #myGrid
+            [theme]="'energyblue'"
+            style="
+              margin: auto;
+              font-size: 11px;
+              font-weight: 500;
+              text-align: center;
+            "
+          >
+          </jqxGrid>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

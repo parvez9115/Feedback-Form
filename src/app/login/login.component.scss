@@ -1,0 +1,95 @@
+.wrapper-container {
+  background: url("../../assets/stage_3/custmerFeeder.jpg");
+  background-size: cover;
+  //    background-repeat: no-repeat;
+  background-position: center center;
+  // opacity: 0.6;
+  background-color: white;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper-container {
+    background-position: bottom center;
+  }
+  .textBox {
+    padding: 5% 0% 17% 34%;
+  }
+  .btn {
+    margin-left: 7%;
+  }
+  .footer {
+    margin-top: 48%;
+    margin-left: -40%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .rowBtn {
+    margin-left: 12%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .rowBtn {
+    margin-left: 12%;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .subHeader {
+    font-style: italic;
+    text-align: center;
+    line-height: 0;
+    margin-top: 0px;
+    color: gray;
+    font-size: 20px;
+  }
+}
+.backBorder {
+  border: 1px solid #bdcaf1;
+  border-radius: 5px;
+  height: 51px;
+  margin-top: 6px;
+}
+
+.iconSize {
+  font-size: 20px;
+  color: rgb(9, 116, 240);
+  border-right: 1px solid #c2c4c5;
+  margin-right: 10px;
+  padding-right: 5px;
+}
+@media only screen and (max-width: 500px) and (max-width: 600px) {
+  .header {
+    color: #3880ff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .subHeader {
+    font-style: italic;
+    text-align: center;
+    line-height: 0;
+    margin-top: 0px;
+    color: gray;
+    font-size: 11px;
+  }
+  .textBox {
+    padding: 32% 0% 20% 2%;
+  }
+  .btn {
+    margin-left: 17%;
+  }
+  .rowBtn {
+    margin-left: -3%;
+  }
+  .footer {
+    margin-top: 45%;
+    margin-left: 27%;
+  }
+}
+//   @media only screen and (max-width: 620px) {
+
+//     .textBox{
+//             padding: 12% 0% 20% 29%;
+//       }
+
+// }

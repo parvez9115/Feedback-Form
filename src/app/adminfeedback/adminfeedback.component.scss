@@ -1,0 +1,68 @@
+/*JQX-Grid*/
+.exportBtnImg {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 11px;
+  left: 41px;
+}
+.feedback-wrapper {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+.wrapper-container::-webkit-scrollbar {
+  width: 5px;
+  height: 10%;
+}
+
+/* Track */
+.wrapper-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.wrapper-container::-webkit-scrollbar-thumb {
+  background: rgb(14, 168, 240);
+}
+
+/* Handle on hover */
+.wrapper-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(158, 213, 238);
+}
+.wrapper-container {
+  height: 80%;
+  padding: 10px 2px 0px;
+  overflow-y: scroll;
+}
+.image-container,
+.imagegroup-container {
+  width: 35%;
+  height: 60%;
+  margin: 5px auto;
+}
+.imagegroup-container {
+  width: 45%;
+}
+@media only screen and (max-width: 768px) {
+  .imagegroup-container {
+    width: 86%;
+    //margin:5px 0 0;
+  }
+  .image-container {
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .imagegroup-container {
+    width: 25%;
+    height: 50%;
+  }
+  .image-container {
+    width: 35%;
+    height: 50%;
+  }
+  .heading-container {
+    height: 12%;
+  }
+}

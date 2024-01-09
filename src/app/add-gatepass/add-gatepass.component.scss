@@ -1,0 +1,96 @@
+.wrapper-container {
+  background: url("../../assets/stage_3/custmerFeeder.jpg");
+  background-size: cover;
+  //    background-repeat: no-repeat;
+  background-position: center center;
+  // opacity: 0.6;
+  background-color: white;
+  height: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .wrapper-container {
+    background-position: bottom center;
+  }
+  .textBox {
+    padding: 0% 0% 20% 33%;
+  }
+  .btn {
+    margin: 7% 30%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .rowBtn {
+    margin-left: 12%;
+  }
+}
+.backBorder {
+  border: 1px solid #bdcaf1;
+  border-radius: 5px;
+  height: 51px;
+  margin-top: 6px;
+}
+// svg{
+//     margin-left: -2px;
+// }
+.iconSize {
+  font-size: 24px;
+  color: rgb(9, 116, 240);
+  border-right: 1px solid #c2c4c5;
+  margin-right: 10px;
+  padding-right: 5px;
+  margin-left: 0px;
+  margin-left: -2px;
+}
+@media only screen and (max-width: 500px) and (max-width: 600px) {
+  .header {
+    color: #3880ff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .subHeader {
+    font-style: italic;
+    text-align: center;
+    line-height: 0;
+    margin-top: 0px;
+    color: gray;
+    font-size: 11px;
+  }
+  .textBox {
+    padding: 2% 0% 20% 2%;
+  }
+  .btn {
+    margin-left: 17%;
+  }
+  .rowBtn {
+    margin: 10% 18%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .card {
+    background-color: #ebb68bf1;
+    color: black;
+    margin: 0px;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  .container {
+    margin-top: 80px;
+  }
+  .cardText {
+    margin-top: 4%;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .header {
+    color: #3880ff;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 59px;
+  }
+  .subHeader {
+    font-size: 25px;
+  }
+}

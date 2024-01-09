@@ -1,0 +1,125 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/Logo 02.png"
+          style="width: 100%; height: 80%; position: absolute"
+        ></ion-img>
+      </ion-col>
+      <ion-col size="8">
+        <h1
+          style="
+            color: #3880ff;
+            text-align: center;
+            font-family: 'Times New Roman';
+          "
+          class="header"
+        >
+          Gate Master Details
+        </h1>
+        <p
+          style="
+            font-style: italic;
+            text-align: center;
+            line-height: 0;
+            margin-top: 0px;
+            color: gray;
+          "
+          class="subHeader"
+        >
+          Let's get in touch
+        </p>
+      </ion-col>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/group-icon.png"
+          style="width: 100%; height: 100%; left: 20px"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="textBox">
+      <ion-col size="12" size-sm="6" size-lg="6" size-md="6">
+        <form [formGroup]="admin">
+          <ion-list style="background: transparent" lines="none">
+            <ion-item class="backBorder">
+              <ion-icon name="person" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Gate Name"
+                formControlName="gatename"
+              ></ion-input>
+            </ion-item>
+            <ion-item class="backBorder">
+              <ion-icon name="briefcase" class="iconSize"></ion-icon>
+              <ion-input
+                type="text"
+                placeholder="Description"
+                formControlName="description"
+              ></ion-input>
+            </ion-item>
+            <ion-row>
+              <ion-radio-group
+                [value]="statusSelection"
+                (ionChange)="selectPickDrop($event)"
+              >
+                <ion-row>
+                  <ion-col>
+                    <ion-item
+                      style="
+                        --inner-border-width: 0;
+                        --min-height: 20px;
+                        --background: var(--ion-item-background);
+                        padding: 0px;
+                      "
+                    >
+                      <ion-radio
+                        style="margin-inline-end: 10px"
+                        class="route-input"
+                        value="Active"
+                      ></ion-radio>
+                      <ion-label style="padding-left: 5px" class="label-column"
+                        >Active</ion-label
+                      >
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item
+                      style="
+                        --inner-border-width: 0;
+                        --min-height: 20px;
+                        --background: var(--ion-item-background);
+                        padding: 0px;
+                      "
+                    >
+                      <ion-radio
+                        style="margin-inline-end: 10px"
+                        class="route-input"
+                        value="Inactive"
+                      ></ion-radio>
+                      <ion-label style="padding-left: 5px" class="label-column"
+                        >In Active</ion-label
+                      >
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-radio-group>
+            </ion-row>
+          </ion-list>
+        </form>
+        <ion-row>
+          <ion-col style="text-align: center"
+            ><ion-button
+              size="small"
+              [disabled]="!admin.valid"
+              (click)="submit()"
+              >SUBMIT</ion-button
+            >
+            <ion-button size="small" (click)="clear()">Cancel</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

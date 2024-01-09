@@ -1,0 +1,197 @@
+<ion-content [fullscreen]="true">
+  <div class="wrapper-container">
+    <div class="feed-container">
+      <ion-row>
+        <ion-col size="2" style="margin-top: 10px">
+          <ion-img
+            src="assets/stage_3/Logo 02.png"
+            style="width: 40%; height: 60%; margin: auto"
+          ></ion-img>
+        </ion-col>
+        <ion-col size="8">
+          <h1
+            style="
+              color: #3880ff;
+              text-align: center;
+              font-weight: 500;
+              margin-bottom: 0;
+            "
+          >
+            {{ header }}
+          </h1>
+          <p
+            style="
+              font-style: italic;
+              text-align: center;
+              color: gray;
+              margin-top: 0;
+            "
+          >
+            {{ word }}
+          </p>
+        </ion-col>
+        <ion-col size="2">
+          <ion-img
+            src="assets/stage_3/group-icon.png"
+            style="width: 60%; height: 60%; margin: 10px auto"
+          ></ion-img>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-row> -->
+
+      <!-- </ion-row> -->
+      <form [formGroup]="datas">
+        <div style="padding: 0px 0px; color: black">
+          <ion-row style="margin: 0; text-align: center">
+            <ion-col size="6">
+              <ion-list lines="none" style="background: transparent">
+                <ion-item class="backBorder">
+                  <ion-icon
+                    name="people"
+                    class="iconSize"
+                    slot="start"
+                  ></ion-icon>
+                  <ion-input
+                    type="text"
+                    placeholder="{{ name }}"
+                    formControlName="name"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+                <ion-item class="backBorder">
+                  <ion-icon name="business" class="iconSize"></ion-icon>
+                  <ion-input
+                    type="text"
+                    placeholder="{{ company }}"
+                    formControlName="company"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+
+                <ion-item class="backBorder">
+                  <ion-img
+                    src="assets/stage_3/images/04.gif"
+                    style="
+                      margin-right: 12px;
+                      margin-left: -7px;
+                      padding-right: 3px;
+                    "
+                    class="iconSize"
+                    slot="start"
+                  >
+                  </ion-img>
+                  <ion-input
+                    type="text"
+                    placeholder="{{ place }}"
+                    formControlName="place"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+                <ion-item class="backBorder">
+                  <ion-icon name="car-sport" class="iconSize"></ion-icon>
+                  <ion-input
+                    type="text"
+                    placeholder="{{ town }}"
+                    formControlName="town"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+                <ion-item class="backBorder">
+                  <ion-icon name="globe" class="iconSize"></ion-icon>
+                  <ion-input
+                    type="text"
+                    placeholder="{{ nature }}"
+                    formControlName="nature"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+                <ion-item class="backBorder">
+                  <ion-img
+                    src="assets/stage_3/images/05.gif"
+                    style="margin-right: 12px; padding-right: 10px"
+                    class="iconSize"
+                    slot="start"
+                  >
+                  </ion-img>
+                  <ion-input
+                    type="number"
+                    placeholder="{{ mobileNo }}"
+                    formControlName="mobile"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+                <ion-item class="backBorder">
+                  <ion-icon name="logo-whatsapp" class="iconSize"></ion-icon>
+                  <ion-input
+                    type="number"
+                    placeholder="{{ whatappNo }}"
+                    formControlName="whatsapp"
+                    (ionChange)="verfiy()"
+                  ></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+
+            <ion-col size="6" style="margin: 15px 0">
+              <div
+                style="
+                  color: rgb(10, 10, 10);
+                  text-align: center;
+                  padding: 0px;
+                  margin: 0px;
+                  border-radius: 5px 5px 0px 0px;
+                  font-size: 12px;
+                  font-size: 12px;
+                  margin-left: -20%;
+                  font-weight: bold;
+                "
+              >
+                <ion-icon name="gift"></ion-icon>Refer buisness leads. Win
+                exciting gifts and offers
+              </div>
+              <div
+                style="
+                  background-color: rgb(105, 164, 231);
+                  color: white;
+                  text-align: center;
+                  padding: 10px;
+                  border-radius: 5px 5px 0px 0px;
+                  font-size: 12px;
+                "
+              >
+                {{ newBuss }}
+              </div>
+              <ion-list
+                style="border-radius: 0px 0px 5px 5px; margin-top: 15px"
+              >
+                <ion-item lines="none" style="height: 100%">
+                  <ion-textarea
+                    rows="8"
+                    cols="20"
+                    formControlName="textArea"
+                    (ionChange)="verfiy()"
+                  >
+                  </ion-textarea>
+                </ion-item>
+              </ion-list>
+              <ion-button
+                shape="round"
+                (click)="submit()"
+                color="{{ color }}"
+                [disabled]="!datas.valid"
+                style="float: right; margin-top: 20px; width: 120px"
+                >{{ submitBut }}
+              </ion-button>
+              <ion-button
+                shape="round"
+                (click)="skip()"
+                style="float: right; margin-top: 20px; width: 120px"
+                >{{ skipBut }}
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

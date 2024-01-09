@@ -1,0 +1,319 @@
+<ion-content [fullscreen]="true" color="light">
+  <div class="feedback-wrapper">
+    <ion-row>
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/Logo 02.png"
+          style="width: 35%; height: 60%"
+        ></ion-img>
+      </ion-col>
+      <ion-col size="6.5">
+        <h2 style="color: #3880ff; font-weight: 600" class="ion-text-center">
+          {{ header }}
+        </h2>
+        <p style="font-style: italic" class="ion-text-center">{{ word }}</p>
+      </ion-col>
+      <!-- <div > -->
+      <ion-col size="1.5" *ngIf="show" routerLink="/registerform">
+        <ion-button
+          color="primary"
+          shape="round"
+          style="width: 100%; font-size: 8px"
+          ><ion-icon name="person" style="margin: 0px; padding: 0px"></ion-icon
+          >{{ "welcome" + name }}</ion-button
+        >
+      </ion-col>
+      <!-- </div> -->
+      <ion-col size="2">
+        <ion-img
+          src="assets/stage_3/group-icon.png"
+          style="width: 50%; height: 60%"
+        ></ion-img>
+      </ion-col>
+    </ion-row>
+    <div class="feedback-container">
+      <ion-row>
+        <ion-col size="12" size-sm="12" size-md="4.5" size-lg="6">
+          <p class="experienceHeader">{{ a2 }}</p>
+          <p style="font-size: 11px">{{ q1 }}</p>
+        </ion-col>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="7.5"
+          size-lg="6"
+          style="text-align: center; margin: auto; padding: 0px"
+          class="ion-text-center"
+        >
+          <ion-segment [(ngModel)]="segment">
+            <ion-segment-button
+              value="delighted"
+              class="seg separationButton"
+              (click)="segmentvalues('delighted', 'segment1')"
+            >
+              <ion-img
+                src="assets/icons/png/deligahted.png"
+                class="iconSize"
+              ></ion-img>
+              {{ delight }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="happy"
+              class="happy separationButton"
+              (click)="segmentvalues('happy', 'segment1')"
+            >
+              <ion-img
+                src="assets/icons/png/happy.png"
+                class="iconSize"
+              ></ion-img>
+              {{ happy }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="satisfied"
+              class="satifaction separationButton"
+              (click)="segmentvalues('satisfied', 'segment1')"
+            >
+              <ion-img
+                src="assets/icons/png/satisfied.png"
+                class="iconSize"
+              ></ion-img>
+              {{ satisfied }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="notSatisfied"
+              class="notSatisfy separationButton"
+              (click)="segmentvalues('notSatisfied', 'segment1')"
+            >
+              <ion-img
+                src="assets/icons/png/notsatisfied.png"
+                class="iconSize"
+              ></ion-img>
+              {{ notSatisfied }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="poor"
+              class="poor separationButton"
+              (click)="segmentvalues('poor', 'segment1')"
+            >
+              <ion-img
+                src="assets/icons/png/poor.png"
+                class="iconSize"
+              ></ion-img>
+              {{ poor }}
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="3"
+          size-lg="2.5"
+          class="ion-text-center sugBtncol"
+        >
+          <button
+            class="btn-primary"
+            [ngClass]="selectedButton1"
+            (click)="suggestionTypes('suggestion', false)"
+          >
+            {{ suggestion }}
+          </button>
+        </ion-col>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="3"
+          size-lg="2.5"
+          class="ion-text-center sugBtncol"
+        >
+          <button
+            class="btn-primary"
+            [ngClass]="selectedButton2"
+            (click)="suggestionTypes('notRight', false)"
+          >
+            {{ something }}
+          </button>
+        </ion-col>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="3"
+          size-lg="2.5"
+          class="ion-text-center sugBtncol"
+        >
+          <button
+            type="button"
+            class="btn-primary"
+            [ngClass]="selectedButton3"
+            (click)="suggestionTypes('compliant', false)"
+          >
+            {{ Compliant }}
+          </button>
+        </ion-col>
+      </ion-row>
+      <div style="font-size: 11px; margin: 0px 30px 0px 5px">
+        <ion-textarea
+          rows="1"
+          cols="80"
+          minlength="120"
+          maxlength="200"
+          placeholder="Please enter your feedback."
+          class="feedBack"
+          [(ngModel)]="textarea1"
+        ></ion-textarea>
+      </div>
+
+      <ion-row>
+        <ion-col size="12" size-sm="12" size-md="4.5" size-lg="6">
+          <p class="experienceHeader">{{ q2 }}</p>
+          <p style="font-size: 11px">{{ q1 }}</p>
+        </ion-col>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="7.5"
+          size-lg="6"
+          style="text-align: center; margin: auto; padding: 0px"
+          class="ion-text-center"
+        >
+          <ion-segment [(ngModel)]="segmentTwo">
+            <ion-segment-button
+              value="delightedTwo"
+              class="seg separationButton"
+              (click)="segmentvalues('delighted', 'segment2')"
+            >
+              <ion-img
+                src="assets/icons/png/deligahted.png"
+                class="iconSize"
+              ></ion-img>
+              {{ delight }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="happyTwo"
+              class="happy separationButton"
+              (click)="segmentvalues('happy', 'segment2')"
+            >
+              <ion-img
+                src="assets/icons/png/happy.png"
+                class="iconSize"
+              ></ion-img>
+              {{ happy }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="satisfiedTwo"
+              class="satifaction separationButton"
+              (click)="segmentvalues('satisfied', 'segment2')"
+            >
+              <ion-img
+                src="assets/icons/png/satisfied.png"
+                class="iconSize"
+              ></ion-img>
+              {{ satisfied }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="notSatisfiedTwo"
+              class="notSatisfy separationButton"
+              (click)="segmentvalues('notSatisfied', 'segment2')"
+            >
+              <ion-img
+                src="assets/icons/png/notsatisfied.png"
+                class="iconSize"
+              ></ion-img>
+              {{ notSatisfied }}
+            </ion-segment-button>
+            <ion-segment-button
+              value="poorTwo"
+              class="poor separationButton"
+              (click)="segmentvalues('poor', 'segment2')"
+            >
+              <ion-img
+                src="assets/icons/png/poor.png"
+                class="iconSize"
+              ></ion-img>
+              {{ poor }}
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="3"
+          size-lg="2.5"
+          class="ion-text-center sugBtncol"
+        >
+          <button
+            class="btn-primary"
+            [ngClass]="selectedButton4"
+            (click)="suggestionTypetwo('suggestions', false)"
+          >
+            {{ suggestion }}
+          </button>
+        </ion-col>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="3"
+          size-lg="2.5"
+          class="ion-text-center sugBtncol"
+        >
+          <button
+            class="btn-primary"
+            [ngClass]="selectedButton5"
+            (click)="suggestionTypetwo('notRights', false)"
+          >
+            {{ something }}
+          </button>
+        </ion-col>
+        <ion-col
+          size="12"
+          size-sm="12"
+          size-md="3"
+          size-lg="2.5"
+          class="ion-text-center sugBtncol"
+        >
+          <button
+            class="btn-primary"
+            [ngClass]="selectedButton6"
+            (click)="suggestionTypetwo('compliants', false)"
+          >
+            {{ Compliant }}
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <div style="font-size: 12px; color: gray; margin: 0px 30px 0px 5px">
+        <ion-textarea
+          rows="1"
+          cols="80"
+          minlength="120"
+          maxlength="200"
+          placeholder="{{ a1 }}"
+          class="feedBack"
+          [(ngModel)]="textarea2"
+        ></ion-textarea>
+      </div>
+      <ion-button
+        shape="round"
+        color="primary"
+        (click)="send()"
+        style="
+          float: right;
+          margin: 15px 25px;
+          width: 110px;
+          height: 30px;
+          font-weight: 500;
+          border: 2px solid white;
+          border-radius: 15px;
+          box-shadow: none;
+        "
+      >
+        {{ sent }}</ion-button
+      >
+    </div>
+  </div>
+</ion-content>
